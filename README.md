@@ -1,29 +1,23 @@
 # OCI Cloud Automation Scripts
 
-This repository contains a collection of Python scripts for automating various tasks in Oracle Cloud Infrastructure (OCI). These scripts are designed to streamline cloud management, improve security, optimize costs, and ensure compliance with OCI best practices.
+This repository contains a collection of OCI CLI scripts for automating various tasks in Oracle Cloud Infrastructure (OCI). These scripts are designed to streamline cloud management, improve security, optimize costs, and ensure compliance with OCI best practices.
 
 
 ## 📂 Folder Structure
 ```
-├── oci-list-buckets                     # List buckets
-├── oci-list-policies                    # List policies
-├── oci-list-resources                   # List all resources
-├── oci-list-unused                      # List unused resources
-├── oci-list-storage                     # List block volumes, File Systems
-├── requirements.txt                     # Dependencies for running scripts
-└── README.md                            # Documentation for the repository
+├── list-buckets                     # List buckets
+├── list-policies                    # List policies
+├── list-resources                   # List all resources
+├── list-unused                      # List unused resources
+├── list-storage                     # List block volumes, File Systems
+└── README.md                        # Documentation for the repository
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 Ensure you have the following installed before running the scripts:
-- **Python 3.x**: Download from [python.org](https://www.python.org/downloads/)
 - **OCI CLI**: Install using [OCI CLI setup guide](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
-- **OCI Python SDK**: Install via pip
-  ```bash
-  pip install oci
-  ```
 - **Authentication Setup**:
   - Ensure you have an OCI **config file** at `~/.oci/config` with required credentials.
   - Example config file:
@@ -41,10 +35,7 @@ Clone this repository and install dependencies:
 ```bash
 git clone <repository_link>
 cd <repo_directory>
-python3.12 -m venv --system-site-package ocipythonenv
-source ocipythonenv/bin/activate
-pip3 install -r requirements.txt
-pip install --upgrade pip
+oci setup config
 ```
 
 ## 📌 Usage
@@ -52,37 +43,37 @@ Each script is designed for a specific task in OCI. Below are examples of how to
 
 ### Listing Buckets
 ```bash
-cd oci-list-buckets
-python oci-list-buckets.py
+cd list-buckets
+./list-buckets.sh
 ```
 
 ### Listing Policies
 ```bash
-cd oci-list-policies
-python oci-list-policies.py
+cd list-policies
+./list-policies.sh
 ```
 
 ### Listing All Resources
 ```bash
-cd oci-list-resources
-python oci-list-resources.py
+cd list-resources
+./list-resources.sh
 ```
 
 ### Listing Unused Resources
 ```bas/
-cd oci-list-unused 
-python oci-list-unused.py
+cd list-unused 
+./list-unused.sh
 ```
 
 ### Listing Storage Volumes (Attached/ Detached) and File Systems
 ```bash
-cd oci-list-storage
-python oci-list-storage.py
+cd list-storage
+./list-storage.sh
 ```
 
 ## 📊 Output Formats
 The scripts generate reports in multiple formats for easy analysis:
-- **CSV**:  Comma-separated values
+- **CSV**:  Comma-separated values.
 - **XLSX**: Structured data for Excel/Google Sheets.
 - **JSON**: Machine-readable structured format.
 - **Log files**: Debugging and execution logs.
