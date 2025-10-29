@@ -60,7 +60,7 @@ cd list-resources
 ```
 
 ### Listing Unused Resources
-```bas/
+```bash
 cd list-unused 
 ./list-unused.sh
 ```
